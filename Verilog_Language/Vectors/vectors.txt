@@ -10,4 +10,6 @@ module top_module (
     assign o1 = vec[1];
     assign o2 = vec[2];
 
+//NOTE: you can use assign {o0, o1, o2} = vec; to assign in 1 line. That statement splits up vec and assigns it in order of whats in the brackets.
+
 endmodule

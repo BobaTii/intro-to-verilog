@@ -1,0 +1,14 @@
+module top_module( 
+    input [7:0] in,
+    output [7:0] out
+);
+    assign out = {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};
+    //another way to do this is with a for loop. use an always block.
+    //the for loop does NOT actually repeat, the synthesizer simply repeats it at compile time and figure out what the circuit produces.
+
+    //always @(*) begin //starts the loop whenever an input changes
+    //	for (integer i=0; i<8; i++)
+    //		out[i] = in[8-i-1]; that in block is actually subtraction, 8 - 1 because of it starting at 0, and subtracting i since you want to reverse it. its better to write 8-1 instead of 7 because of future expandability.
+    //end
+
+endmodule
